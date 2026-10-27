@@ -341,3 +341,44 @@ html.lenis,html.lenis body{height:auto}
   .retrato:hover .retrato__fondo{scale:1.06}
   .retrato:hover .retrato__persona{transform:translateY(-6px)}
 }
+
+/* ---------- 09 Blog: el collage editorial de las portadas ---------- */
+.anatomia{display:grid;gap:clamp(22px,4vw,48px);align-items:start}
+.anatomia__portada{margin:0 auto;width:min(100%,420px);border-radius:var(--r-md);overflow:hidden;rotate:-1.5deg;box-shadow:0 34px 60px -36px rgba(2,30,75,.6)}
+.anatomia__portada img{width:100%;height:auto}
+.ingredientes{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:ing}
+.ing{counter-increment:ing;display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;align-items:center;background:var(--surface);border-radius:var(--r-lg);padding:12px 18px 12px 12px}
+.ing .h3::before{content:counter(ing,decimal-leading-zero) "  ";white-space:pre;color:var(--brand-text);font-size:.8em}
+.ing p:not(.h3){font-size:.9rem;line-height:1.5;color:var(--muted);margin-top:4px}
+.ing__demo{height:118px;border-radius:var(--r-md);background:var(--bg);display:grid;place-items:center;overflow:hidden;position:relative}
+.fondos{display:grid;grid-template-columns:repeat(2,32px);gap:8px}
+.fondos i{width:32px;height:32px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1.5px rgba(2,30,75,.14)}
+.ing__demo--recorte{background:#021E4B;align-items:end}
+.ing__demo--recorte img{height:108px;width:auto}
+.rasgado{width:68%;height:56%;background:var(--brand);rotate:-5deg;clip-path:polygon(0% -2%,4.7% -1.8%,9.3% 1.9%,14% .8%,18.7% .1%,23.3% -.4%,28% -.1%,32.7% -1%,37.3% .2%,42% .9%,46.7% -1%,51.3% -1.4%,56% 1.1%,60.7% .1%,65.3% -1.2%,70% -.5%,74.7% -.8%,79.3% .1%,84% -.8%,88.7% 1.9%,93.3% -1%,98% 1.5%,99.2% 7%,99% 14%,99.1% 21%,99.4% 28%,100.1% 35%,100.7% 42%,98.9% 49%,101.1% 56%,100.1% 63%,100.3% 70%,100.5% 77%,101.2% 84%,100.3% 91%,101.1% 98%,95.3% 101.3%,90.7% 98.2%,86% 98.7%,81.3% 99.4%,76.7% 99.7%,72% 98.1%,67.3% 98.4%,62.7% 101.1%,58% 99.5%,53.3% 99.7%,48.7% 99.9%,44% 101.8%,39.3% 100.8%,34.7% 100.8%,30% 99.3%,25.3% 99.4%,20.7% 98.6%,16% 98.5%,11.3% 101.7%,6.7% 99.3%,2% 98.8%,.4% 93%,-.4% 86%,-1.2% 79%,.5% 72%,1.1% 65%,.1% 58%,.9% 51%,.4% 44%,1.1% 37%,-1% 30%,.1% 23%,.4% 16%,1% 9%,1.2% 2%)}
+.garabato{width:88%;height:auto;overflow:visible}
+.garabato path{fill:none;stroke:var(--brand);stroke-width:5;stroke-linecap:round}
+.garabato circle{fill:var(--brand)}
+.garabato .c-anillo{fill:var(--bg);stroke:var(--brand);stroke-width:4}
+.ing__demo--titular{background:#021E4B;padding:10px}
+.titular-demo{display:grid;justify-items:start;gap:8px}
+.titular-demo__t{font:400 1.3rem/1 var(--font-accent);background:#fff;color:var(--ink);padding:.08em .3em .12em;rotate:-2deg}
+.titular-demo__t em{color:var(--brand)}
+.titular-demo__f{font:600 .58rem/1.2 var(--font-display);background:var(--brand);color:#fff;padding:.4em .6em}
+@media (min-width:560px){.ing{grid-template-columns:150px minmax(0,1fr)}.ing__demo{height:130px}.titular-demo__t{font-size:1.55rem}.titular-demo__f{font-size:.66rem}}
+@media (min-width:960px){.anatomia{grid-template-columns:5fr 7fr}.anatomia__portada{position:sticky;top:32px;width:100%}}
+
+.formatos{display:grid;gap:22px;margin-top:clamp(36px,6vw,72px)}
+.formatos figure{margin:0;display:grid;gap:12px;align-content:start}
+.formatos__marco{border-radius:var(--r-md);overflow:hidden;box-shadow:0 24px 44px -30px rgba(2,30,75,.5)}
+.formatos__marco--v{width:min(100%,300px)}
+.formatos__marco img{width:100%;height:auto}
+.formatos figcaption{font-size:.92rem;color:var(--muted)}
+.formatos figcaption strong{display:block;font:600 1rem/1.3 var(--font-display);color:var(--ink);margin-bottom:2px}
+@media (min-width:760px){.formatos{grid-template-columns:minmax(0,4fr) minmax(0,7fr);align-items:end}.formatos__marco--v{width:100%}}
+
+.coleccion{display:grid;grid-auto-flow:column;grid-auto-columns:58%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:clamp(36px,6vw,72px);padding-bottom:10px;scrollbar-width:thin}
+.coleccion a{scroll-snap-align:start;border-radius:var(--r-sm);overflow:hidden;transition:translate var(--t-hover) var(--ease)}
+.coleccion a:hover{translate:0 -6px}
+.coleccion img{width:100%;height:auto}
+@media (min-width:860px){.coleccion{grid-auto-flow:row;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}}
