@@ -177,3 +177,11 @@ Tres de empresas y escuelas, dos de familias: la misma proporción 60/40 del sit
 - Agregué un tono de papel cálido (`#F1EDE4`) solo para las portadas tipo cuaderno, como en la referencia.
 
 **Pendiente:** los otros 12 artículos siguen enlazando al sitio actual desde Recursos. Si la página nueva reemplaza la de Hostinger, hay que pasarlos al blog o quitarlos de la lista.
+
+## Publicación en Vercel
+
+- Proyecto `neuroinsight-web` en el equipo Ingeniak de Vercel, conectado al repositorio `riklanderos/Neuroinsight_web` (rama `main`).
+- Dirección temporal: https://neuroinsight-web.vercel.app
+- Cada cambio que se sube a `main` se publica solo, en unos segundos.
+- `vercel.json` (lo genera `fuente/build-blog.mjs`) lleva las redirecciones 301 de los artículos viejos. `.vercelignore` evita que se publiquen `materiales/`, `fuente/` y este LEEME.
+- Pendiente: conectar el dominio `neuroinsightcr.com` en Vercel (Settings → Domains) y cambiar los DNS donde está registrado. Mientras tanto, las etiquetas canónicas apuntan al dominio final.
