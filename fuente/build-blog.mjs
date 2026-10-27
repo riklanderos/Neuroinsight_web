@@ -272,4 +272,7 @@ fs.writeFileSync(new URL('../sitemap.xml', import.meta.url), `<?xml version="1.0
 fs.writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /materiales/\nDisallow: /fuente/\n\nSitemap: ${DOM}/sitemap.xml\n`);
 fs.writeFileSync(new URL('../_redirects', import.meta.url), ARTICULOS.map(a => `/${a.original}  /blog/${a.slug}/  301`).join('\n') + '\n');
 fs.writeFileSync(new URL('../.htaccess', import.meta.url), '# Redirecciones de los artículos del sitio anterior (Hostinger / Apache)\nRewriteEngine On\n' + ARTICULOS.map(a => `RewriteRule ^${a.original}/?$ /blog/${a.slug}/ [R=301,L]`).join('\n') + '\n');
+fs.writeFileSync(new URL('../vercel.json', import.meta.url), JSON.stringify({
+  redirects: ARTICULOS.flatMap(a => ['', '/'].map(fin => ({ source: `/${a.original}${fin}`, destination: `/blog/${a.slug}/`, statusCode: 301 })))
+}, null, 2) + '\n');
 console.log('blog ok');

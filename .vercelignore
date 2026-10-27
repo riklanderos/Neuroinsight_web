@@ -1,0 +1,7 @@
+# Archivos de trabajo que no se publican en el sitio
+materiales/
+fuente/
+LEEME.md
+estructura.md
+.htaccess
+_redirects

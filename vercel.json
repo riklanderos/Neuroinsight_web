@@ -1,0 +1,54 @@
+{
+  "redirects": [
+    {
+      "source": "/neurodivergencia-en-el-trabajo-cuando-la-barrera-no-es-el-talento-sino-el-entorno",
+      "destination": "/blog/neurodivergencia-en-el-trabajo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/neurodivergencia-en-el-trabajo-cuando-la-barrera-no-es-el-talento-sino-el-entorno/",
+      "destination": "/blog/neurodivergencia-en-el-trabajo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ajustes-razonables-de-bajo-costo-y-alto-impacto-en-equipos-neurodiversos",
+      "destination": "/blog/ajustes-razonables-en-el-trabajo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ajustes-razonables-de-bajo-costo-y-alto-impacto-en-equipos-neurodiversos/",
+      "destination": "/blog/ajustes-razonables-en-el-trabajo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/escuelas-neuroincluyentes-estrategias-practicas-para-apoyar-a-estudiantes-neurodivergentes",
+      "destination": "/blog/escuelas-neuroincluyentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/escuelas-neuroincluyentes-estrategias-practicas-para-apoyar-a-estudiantes-neurodivergentes/",
+      "destination": "/blog/escuelas-neuroincluyentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/senales-tempranas-de-tea-y-tdah-que-observar-y-cuando-buscar-apoyo",
+      "destination": "/blog/senales-tempranas-tea-tdah/",
+      "statusCode": 301
+    },
+    {
+      "source": "/senales-tempranas-de-tea-y-tdah-que-observar-y-cuando-buscar-apoyo/",
+      "destination": "/blog/senales-tempranas-tea-tdah/",
+      "statusCode": 301
+    },
+    {
+      "source": "/camuflaje-agotamiento-y-burnout-autista-cuando-verse-bien-tambien-cansa",
+      "destination": "/blog/burnout-autista-y-camuflaje/",
+      "statusCode": 301
+    },
+    {
+      "source": "/camuflaje-agotamiento-y-burnout-autista-cuando-verse-bien-tambien-cansa/",
+      "destination": "/blog/burnout-autista-y-camuflaje/",
+      "statusCode": 301
+    }
+  ]
+}
