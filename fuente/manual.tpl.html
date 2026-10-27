@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es-CR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manual de marca · NeuroInsight</title>
+<meta name="description" content="Manual de marca de NeuroInsight: identidad, colores, tipografía, elementos gráficos, imagen y movimiento.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#021E4B">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=20261026a">
+<link rel="stylesheet" href="css/manual.css?v=20261026b">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+</head>
+<body>
+
+<!-- Sprite del logo: trazos del logo oficial, vectorizados desde el PNG del sitio actual -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="logo-all" viewBox="%%VB_ALL%%"><g fill-rule="evenodd"><path style="fill:var(--l1,#021E4B)" d="%%NAVY_SYM%%"/><path style="fill:var(--l2,#1D78C9)" d="%%BLUE_SYM%%"/><path style="fill:var(--l1,#021E4B)" d="%%NAVY_WORD%%"/><path style="fill:var(--l2,#1D78C9)" d="%%BLUE_WORD%%"/></g></symbol>
+    <symbol id="iso" viewBox="%%VB_SYM%%"><g fill-rule="evenodd"><path style="fill:var(--l1,#021E4B)" d="%%NAVY_SYM%%"/><path style="fill:var(--l2,#1D78C9)" d="%%BLUE_SYM%%"/></g></symbol>
+  </defs>
+</svg>
+
+<p class="aviso">Manual de marca · Para aprobar</p>
+
+<!-- ===== INICIO Portada real ===== -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a href="#portada" aria-label="NeuroInsight, inicio"><svg class="logo nav__logo" viewBox="%%VB_ALL%%" role="img" aria-label="NeuroInsight"><use href="#logo-all"/></svg></a>
+    <nav class="nav__links" aria-label="Secciones del sitio">
+      <a href="#portada">Servicios</a><a href="#portada">Nosotros</a><a href="#portada">Recursos</a><a href="#portada">Contacto</a>
+    </nav>
+    <a class="btn nav__cta" href="https://wa.me/50671024989?text=Hola%20NeuroInsight%2C%20quisiera%20solicitar%20una%20cita." target="_blank" rel="noopener">Solicitar cita <span class="btn__node" aria-hidden="true"></span></a>
+  </div>
+</header>
+
+<section class="hero" id="portada" data-portada>
+  <svg class="camino" aria-hidden="true" focusable="false"><path/><circle class="camino__anillo" r="6" cx="-20" cy="-20"/><circle class="camino__nodo" r="5.5" cx="-20" cy="-20"/></svg>
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow eyebrow--lista" data-hero-in><span>Evaluación</span><span>Acompañamiento</span><span>Educación</span></p>
+      <h1 class="hero__title">El espacio donde la neurodivergencia deja de ser duda y se vuelve <span class="accent">comprensión.</span></h1>
+      <p class="hero__lead" data-hero-in>Desarrollamos personas, familias y equipos con un enfoque neuroinclusivo y basado en evidencia.</p>
+      <div class="hero__actions" data-hero-in>
+        <a class="btn" data-camino-hasta href="https://wa.me/50671024989?text=Hola%20NeuroInsight%2C%20quisiera%20solicitar%20una%20cita." target="_blank" rel="noopener">Solicitar cita <span class="btn__node" aria-hidden="true"></span></a>
+        <a class="link-node" href="#esencia">Conoce los servicios <svg viewBox="0 0 34 12" aria-hidden="true"><path d="M1 6h24"/><circle cx="29" cy="6" r="4"/></svg></a>
+      </div>
+    </div>
+
+    <div class="hero__art">
+      <div class="palabra-fondo" aria-hidden="true"><span>INSIGHT</span><span>INSIGHT</span><span>INSIGHT</span><span>INSIGHT</span></div>
+      <span class="pulso" aria-hidden="true"></span>
+      <div class="cerebro" data-camino-desde>
+        <img class="hemi--l" src="img/cerebro-dual-640.webp" srcset="img/cerebro-dual-640.webp 640w, img/cerebro-dual-1100.webp 1100w" sizes="(min-width:960px) 480px, 78vw" width="1100" height="1277" alt="Cerebro en 3D: un hemisferio azul noche y otro azul Insight que se encuentran al centro" fetchpriority="high">
+        <img class="hemi--r" src="img/cerebro-dual-640.webp" srcset="img/cerebro-dual-640.webp 640w, img/cerebro-dual-1100.webp 1100w" sizes="(min-width:960px) 480px, 78vw" width="1100" height="1277" alt="" aria-hidden="true">
+      </div>
+      <p class="etiqueta"><i aria-hidden="true"></i>Comprender para acompañar.</p>
+      <div class="hero__sello" aria-hidden="true">
+        <svg class="sello" viewBox="0 0 120 120">
+          <defs><path id="sello-c" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <g class="sello__giro"><text><textPath href="#sello-c" textLength="289" lengthAdjust="spacing">NEURO INSIGHT • COMPRENDER PARA ACOMPAÑAR • </textPath></text></g>
+          <use href="#iso" x="38" y="40" width="44" height="40"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="muestra__controles">
+      <button type="button" class="muestra__repetir" data-ver-de-nuevo>Ver de nuevo</button>
+      <span class="muestra__aviso" data-aviso-rm hidden>Tienes activado "Reducir movimiento": aquí ves una versión sin desplazamientos. Apágalo para ver la animación completa.</span>
+    </p>
+  </div>
+</section>
+<!-- ===== FIN Portada real ===== -->
+
+<!-- ===== INICIO 01 Esencia ===== -->
+<section class="cap on-dark" id="esencia">
+  <div class="wrap">
+    <div class="cap__head">
+      <div><p class="cap__num">01 · Esencia</p></div>
+      <h2 class="h2" data-split>Dos hemisferios, una sola red.</h2>
+    </div>
+    <div class="esencia">
+      <div class="esencia__art" data-reveal><img src="img/cerebro-red-640.webp" srcset="img/cerebro-red-640.webp 640w, img/cerebro-red-1100.webp 1100w" sizes="(min-width:960px) 480px, 90vw" width="1100" height="1366" alt="Cerebro dibujado con líneas de luz sobre azul noche" loading="lazy"></div>
+      <div class="esencia__txt">
+        <p class="lead" data-reveal>El logo de NeuroInsight es un cerebro partido en dos colores que se unen al centro. Esa es la idea de toda la marca: la ciencia y la cercanía trabajan juntas para que cada persona sea comprendida.</p>
+        <div class="hemis" data-reveal>
+          <div><strong>Azul noche</strong><p>Ciencia y evidencia. Evaluaciones rigurosas, decisiones con respaldo.</p></div>
+          <div><strong>Azul Insight</strong><p>Empatía y cercanía. Escuchar sin juicio, acompañar con humanidad.</p></div>
+        </div>
+        <ul class="valores" data-reveal>
+          <li><strong>Propósito</strong><span>Concientizar, educar y transformar las relaciones humanas para construir una sociedad más inclusiva y preparada.</span></li>
+          <li><strong>Misión</strong><span>Impulsar el desarrollo neurodivergente con evaluación, acompañamiento y educación para que cada persona prospere con confianza.</span></li>
+          <li><strong>Valores</strong><span>Empatía, ciencia e inclusión: entornos donde todas las mentes pertenecen y pueden prosperar.</span></li>
+        </ul>
+        <div class="personalidad" data-reveal><span>Cálida</span><span>Precisa</span><span>Serena</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN 01 Esencia ===== -->
+
+<!-- ===== INICIO 02 Logo ===== -->
+<section class="cap" id="logo">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">02 · Logo</p>
+      <div><h2 class="h2" data-split>El logo se respeta tal como es.</h2><p class="lead" data-reveal style="margin-top:14px">Lo redibujamos en vector desde tu archivo, sin cambiarle ni una forma. Así se ve nítido en cualquier tamaño y podemos animarlo.</p></div>
+    </div>
+    <div class="logos">
+      <figure class="logo-card" data-reveal><svg class="logo" viewBox="%%VB_ALL%%" role="img" aria-label="Logo de NeuroInsight a color"><use href="#logo-all"/></svg><figcaption>Principal, sobre fondo claro</figcaption></figure>
+      <figure class="logo-card logo-card--dark" data-reveal><svg class="logo" viewBox="%%VB_ALL%%" style="--l1:#fff;--l2:#8EC0F0" role="img" aria-label="Logo de NeuroInsight en blanco"><use href="#logo-all"/></svg><figcaption>Sobre azul noche</figcaption></figure>
+      <figure class="logo-card logo-card--brand" data-reveal><svg class="iso" viewBox="%%VB_SYM%%" style="--l1:#021E4B;--l2:#fff" role="img" aria-label="Símbolo de NeuroInsight"><use href="#iso"/></svg><figcaption>Símbolo solo: ícono, redes y sello</figcaption></figure>
+    </div>
+    <div class="logos" style="margin-top:16px">
+      <figure class="logo-card" data-reveal><div class="proteccion"><svg class="logo" viewBox="%%VB_ALL%%" role="img" aria-label="Zona de protección del logo"><use href="#logo-all"/></svg></div><figcaption>Aire alrededor: siempre el alto de la palabra INSIGHT</figcaption></figure>
+      <div class="logo-card" data-reveal style="place-items:start;align-content:center;gap:12px">
+        <p class="h3">Tamaño mínimo</p>
+        <p class="lead" style="font-size:1rem">En pantalla, la palabra NEURO nunca más chica que un texto normal. Si el espacio no alcanza, usa solo el símbolo.</p>
+      </div>
+    </div>
+    <div class="mal" data-reveal>
+      <figure><svg class="logo mal__estirado" viewBox="%%VB_ALL%%" aria-hidden="true"><use href="#logo-all"/></svg>No estirarlo ni aplastarlo</figure>
+      <figure><svg class="logo mal__color" viewBox="%%VB_ALL%%" aria-hidden="true"><use href="#logo-all"/></svg>No cambiarle los colores</figure>
+      <figure><svg class="logo mal__girado" viewBox="%%VB_ALL%%" aria-hidden="true"><use href="#logo-all"/></svg>No girarlo</figure>
+      <figure><div class="mal__foto"><svg class="logo" viewBox="%%VB_ALL%%" aria-hidden="true"><use href="#logo-all"/></svg></div>No ponerlo a color sobre fotos oscuras</figure>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN 02 Logo ===== -->
+
+<!-- ===== INICIO 03 Color ===== -->
+<section class="cap" id="color">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">03 · Color</p>
+      <div><h2 class="h2" data-split>Los dos azules del logo, y mucho aire.</h2><p class="lead" data-reveal style="margin-top:14px">Toda la paleta sale de tu logo. Los claros son esos mismos azules con más luz.</p></div>
+    </div>
+    <div class="paleta">
+      <article class="color color--grande" data-reveal><div class="color__muestra" style="--c:#021E4B">#021E4B</div><div class="color__info"><strong>Azul noche</strong><p>El hemisferio de la ciencia. Títulos, textos y las secciones profundas.</p></div></article>
+      <article class="color color--grande" data-reveal><div class="color__muestra" style="--c:#1D78C9">#1D78C9</div><div class="color__info"><strong>Azul Insight</strong><p>El hemisferio humano. Botones, puntos, trazos y lo que guía la mirada.</p></div></article>
+      <article class="color" data-reveal><div class="color__muestra borde" style="--c:#EEF2F7;--t:#021E4B">#EEF2F7</div><div class="color__info"><strong>Niebla</strong><p>El fondo de todo: claro y tranquilo.</p></div></article>
+      <article class="color" data-reveal><div class="color__muestra borde" style="--c:#FFFFFF;--t:#021E4B">#FFFFFF</div><div class="color__info"><strong>Blanco</strong><p>Tarjetas y formularios.</p></div></article>
+      <article class="color" data-reveal><div class="color__muestra" style="--c:#DCE9F7;--t:#021E4B">#DCE9F7</div><div class="color__info"><strong>Azul claro</strong><p>Fondos de íconos, etiquetas y las letras gigantes.</p></div></article>
+      <article class="color" data-reveal><div class="color__muestra" style="--c:#8EC0F0;--t:#021E4B">#8EC0F0</div><div class="color__info"><strong>Azul cielo</strong><p>Textos y puntos sobre azul noche.</p></div></article>
+      <article class="color" data-reveal><div class="color__muestra" style="--c:#4A5B78">#4A5B78</div><div class="color__info"><strong>Pizarra</strong><p>Párrafos de apoyo.</p></div></article>
+      <article class="color" data-reveal><div class="color__muestra" style="--c:#1765AB">#1765AB</div><div class="color__info"><strong>Azul Insight profundo</strong><p>El botón cuando pasas el mouse encima.</p></div></article>
+    </div>
+    <div class="proporcion" data-reveal aria-hidden="true">
+      <span style="flex:58;background:#EEF2F7;color:#021E4B;box-shadow:inset 0 0 0 1.5px #D3DCE8;border-radius:999px 0 0 999px">Niebla y blanco</span>
+      <span style="flex:24;background:#021E4B;color:#fff">Azul noche</span>
+      <span style="flex:12;background:#1D78C9;color:#fff">Insight</span>
+      <span style="flex:6;background:#DCE9F7"></span>
+    </div>
+    <p class="proporcion-nota" data-reveal>Cuánto de cada uno: mucho aire claro, azul noche para dar peso y el azul Insight solo donde quieres que la persona mire o toque.</p>
+  </div>
+</section>
+<!-- ===== FIN 03 Color ===== -->
+
+<!-- ===== INICIO 04 Tipografía ===== -->
+<section class="cap" id="tipografia">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">04 · Tipografía</p>
+      <div><h2 class="h2" data-split>Tres letras, cada una con su trabajo.</h2><p class="lead" data-reveal style="margin-top:14px">Una geométrica que se parece a las letras de tu logo, una cursiva cálida para una sola palabra y una muy cómoda para leer.</p></div>
+    </div>
+    <div class="tipos">
+      <article class="tipo tipo--display" data-reveal><p class="tipo__nombre"><strong>Montserrat</strong><span>Títulos y botones</span></p><p class="tipo__aa">Aa</p><p>La misma geometría redonda de NEURO. Seminegrita en títulos, mayúsculas muy espaciadas en las etiquetas, como INSIGHT.</p></article>
+      <article class="tipo tipo--accent" data-reveal><p class="tipo__nombre"><strong>Instrument Serif</strong><span>Una palabra que abraza</span></p><p class="tipo__aa">Aa</p><p>Cursiva, en azul Insight. Solo en la portada y, a lo mucho, en un título más. Si se repite, pierde fuerza.</p></article>
+      <article class="tipo tipo--body" data-reveal><p class="tipo__nombre"><strong>DM Sans</strong><span>Párrafos</span></p><p class="tipo__aa">Aa</p><p>La que ya usa tu sitio actual: clara, amable y fácil de leer en el celular.</p></article>
+    </div>
+    <div class="jerarquia" data-reveal>
+      <p class="eyebrow">Salud familiar</p>
+      <p class="h2">Evaluación, diagnóstico y <span class="accent" style="color:var(--brand)">acompañamiento</span> para cada familia.</p>
+      <p class="lead">Realizamos valoraciones integrales (TEA, TDAH, aprendizaje, funciones ejecutivas), orientamos a madres, padres y cuidadores, y diseñamos planes de intervención personalizados.</p>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN 04 Tipografía ===== -->
+
+<!-- ===== INICIO 05 Elementos gráficos ===== -->
+<section class="cap" id="elementos">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">05 · Elementos gráficos</p>
+      <div><h2 class="h2" data-split>Todo sale de tu cerebro de circuitos.</h2><p class="lead" data-reveal style="margin-top:14px">En lugar de adornos genéricos, la página usa las piezas de tu propio logo. Así se reconoce aunque no se vea el nombre.</p></div>
+    </div>
+    <div class="elementos">
+      <article class="el" data-reveal>
+        <div class="el__demo"><div class="nodos" data-demo-target="nodos"><i></i><i></i><i></i><i></i></div></div>
+        <p class="h3">Nodo y anillo</p>
+        <p>Los puntos llenos y huecos del logo. Son las viñetas, los pasos y la marca de cada etiqueta.</p>
+        <button class="ver-mov" type="button" data-demo="nodos">Ver cómo se mueve</button>
+      </article>
+      <article class="el" data-reveal>
+        <div class="el__demo"><svg class="circuito" viewBox="0 0 300 120" data-demo-target="circuito" aria-hidden="true"><path class="c-navy" d="M14 98H118L160 56H214"/><path d="M118 98H170L196 72H286"/><circle class="c-anillo" cx="14" cy="98" r="7"/><circle cx="214" cy="56" r="7" style="fill:var(--ink)"/><circle cx="286" cy="72" r="7"/></svg></div>
+        <p class="h3">Circuito</p>
+        <p>La línea del logo que gira en ángulo y termina en un punto. Conecta ideas y, en la portada, lleva la mirada hasta el botón.</p>
+        <button class="ver-mov" type="button" data-demo="circuito">Ver cómo se mueve</button>
+      </article>
+      <article class="el" data-reveal>
+        <div class="el__demo"><div class="split-demo" data-demo-target="split"><span>Ciencia</span><span>Empatía</span></div></div>
+        <p class="h3">Dos hemisferios</p>
+        <p>Azul noche y azul Insight que se encuentran al centro. Divide bloques, tarjetas y la imagen principal.</p>
+        <button class="ver-mov" type="button" data-demo="split">Ver cómo se mueve</button>
+      </article>
+      <article class="el" data-reveal>
+        <div class="el__demo"><p class="insight-demo" data-demo-target="insight" aria-label="INSIGHT"><span>I</span><span>N</span><span>S</span><span>I</span><span>G</span><span>H</span><span>T</span></p></div>
+        <p class="h3">Letra espaciada</p>
+        <p>El espaciado amplio de INSIGHT. Lo usan las etiquetas pequeñas y la palabra gigante detrás del cerebro.</p>
+        <button class="ver-mov" type="button" data-demo="insight">Ver cómo se mueve</button>
+      </article>
+      <article class="el" data-reveal>
+        <div class="el__demo"><svg class="sello" viewBox="0 0 120 120" aria-hidden="true"><g class="sello__giro"><text><textPath href="#sello-c" textLength="289" lengthAdjust="spacing">NEURO INSIGHT • COMPRENDER PARA ACOMPAÑAR • </textPath></text></g><use href="#iso" x="38" y="40" width="44" height="40"/></svg></div>
+        <p class="h3">Sello</p>
+        <p>Tu símbolo con la frase "Comprender para acompañar" girando despacio. Firma la portada y el perfil de Adriana.</p>
+      </article>
+      <article class="el" data-reveal>
+        <div class="el__demo"><ul class="lista-nodos"><li>Valoraciones TEA y TDAH</li><li>Aprendizaje y funciones ejecutivas</li><li>Orientación a familias</li></ul></div>
+        <p class="h3">Listas con nodos</p>
+        <p>Así se ven las listas en toda la página: un punto lleno y uno hueco, alternados como en el logo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN 05 Elementos gráficos ===== -->
+
+<!-- ===== INICIO 06 Imagen ===== -->
+<section class="cap" id="imagen">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">06 · Imagen</p>
+      <div><h2 class="h2" data-split>Cerebros con tus colores y personas reales.</h2><p class="lead" data-reveal style="margin-top:14px">Las imágenes del cerebro las creamos con inteligencia artificial en tus dos azules. Las personas siempre son reales: tu equipo y familias que dieron permiso.</p></div>
+    </div>
+    <div class="imagenes">
+      <figure class="img-card" data-reveal><div class="img-card__marco img-card__marco--claro"><img src="img/cerebro-dual-640.webp" width="640" height="743" alt="Cerebro en 3D en azul noche y azul Insight" loading="lazy"></div><figcaption><strong>Cerebro de dos hemisferios</strong>La protagonista de la portada. Fondo claro, luz suave.</figcaption></figure>
+      <figure class="img-card" data-reveal><div class="img-card__marco"><img src="img/cerebro-red-640.webp" width="640" height="795" alt="Cerebro de líneas de luz sobre azul noche" loading="lazy"></div><figcaption><strong>Red de luz</strong>Para las secciones profundas, siempre sobre azul noche.</figcaption></figure>
+    </div>
+
+    <div class="retratos__head" data-reveal>
+      <p class="eyebrow">Retratos del equipo</p>
+      <p class="h3">Cada persona con su propio fondo, sus iniciales detrás y su cargo en una etiqueta.</p>
+      <p class="lead" style="font-size:1rem">Recortamos las fotos que ya tienes y las pusimos sobre cuatro fondos distintos, todos con degradados de tus azules y los circuitos de tu logo.</p>
+    </div>
+    <div class="retratos">
+      <!-- Retrato: Adriana -->
+      <article class="retrato" data-reveal style="--fondo-pos:50% 30%;--brillo:.5">
+        <img class="retrato__fondo" src="img/equipo/fondo-1.webp" width="900" height="1117" alt="" aria-hidden="true" loading="lazy">
+        <span class="retrato__inicial" aria-hidden="true"><span>A</span><span>C</span></span>
+        <span class="retrato__brillo" aria-hidden="true"></span>
+        <img class="retrato__persona" src="img/equipo/adriana.webp" width="711" height="872" alt="M.Sc. Adriana Córdoba" loading="lazy" style="--alto:86%">
+        <p class="retrato__esq retrato__esq--izq" aria-hidden="true">Neuro<b>Insight</b></p>
+        <p class="retrato__esq retrato__esq--der" aria-hidden="true">M.Sc.<b>Psicóloga</b></p>
+        <div class="retrato__pie">
+          <p class="retrato__rol">Directora y <b>fundadora</b></p>
+          <h3 class="retrato__nombre">Adriana<br>Córdoba</h3>
+          <p class="retrato__tag">Neurodesarrollo y neurodivergencia</p>
+        </div>
+      </article>
+      <!-- Retrato: Allan -->
+      <article class="retrato" data-reveal style="--brillo:.35">
+        <img class="retrato__fondo" src="img/equipo/fondo-3.webp" width="900" height="1117" alt="" aria-hidden="true" loading="lazy">
+        <span class="retrato__inicial" aria-hidden="true"><span>A</span><span>M</span></span>
+        <span class="retrato__brillo" aria-hidden="true"></span>
+        <img class="retrato__persona" src="img/equipo/allan.webp" width="820" height="779" alt="Allan Mena" loading="lazy" style="--alto:76%">
+        <p class="retrato__esq retrato__esq--izq" aria-hidden="true">Neuro<b>Insight</b></p>
+        <p class="retrato__esq retrato__esq--der" aria-hidden="true">Equipo<b>Soporte</b></p>
+        <div class="retrato__pie">
+          <p class="retrato__rol">Coordinador de <b>operaciones</b></p>
+          <h3 class="retrato__nombre">Allan<br>Mena</h3>
+          <p class="retrato__tag">Consultor empresarial</p>
+        </div>
+      </article>
+      <!-- Retrato: Jennifer -->
+      <article class="retrato" data-reveal style="--brillo:.3">
+        <img class="retrato__fondo" src="img/equipo/fondo-2.webp" width="900" height="1117" alt="" aria-hidden="true" loading="lazy">
+        <span class="retrato__inicial" aria-hidden="true"><span>J</span><span>M</span></span>
+        <span class="retrato__brillo" aria-hidden="true"></span>
+        <img class="retrato__persona" src="img/equipo/jennifer.webp" width="561" height="564" alt="Jennifer Martínez Martínez" loading="lazy" style="--alto:82%">
+        <p class="retrato__esq retrato__esq--izq" aria-hidden="true">Neuro<b>Insight</b></p>
+        <p class="retrato__esq retrato__esq--der" aria-hidden="true">Equipo<b>Soporte</b></p>
+        <div class="retrato__pie">
+          <p class="retrato__rol">Experiencia del <b>cliente</b></p>
+          <h3 class="retrato__nombre">Jennifer<br>Martínez</h3>
+          <p class="retrato__tag">Coordinadora de desarrollo comercial</p>
+        </div>
+      </article>
+      <!-- Retrato: Lindsay -->
+      <article class="retrato" data-reveal style="--brillo:.75">
+        <img class="retrato__fondo" src="img/equipo/fondo-4.webp" width="900" height="1117" alt="" aria-hidden="true" loading="lazy">
+        <span class="retrato__inicial" aria-hidden="true"><span>L</span><span>B</span></span>
+        <span class="retrato__brillo" aria-hidden="true"></span>
+        <img class="retrato__persona" src="img/equipo/lindsay.webp" width="820" height="825" alt="Lindsay Barrantes Córdoba" loading="lazy" style="--alto:82%">
+        <p class="retrato__esq retrato__esq--izq" aria-hidden="true">Neuro<b>Insight</b></p>
+        <p class="retrato__esq retrato__esq--der" aria-hidden="true">Equipo<b>Soporte</b></p>
+        <div class="retrato__pie">
+          <p class="retrato__rol">Gestión <b>administrativa</b></p>
+          <h3 class="retrato__nombre">Lindsay<br>Barrantes</h3>
+          <p class="retrato__tag">Coordinadora administrativa</p>
+        </div>
+      </article>
+    </div>
+
+    <ul class="reglas" data-reveal>
+      <li>Fotos del equipo, de los talleres y del espacio en San Rafael de Oreamuno, antes que fotos de banco.</li>
+      <li>Niños y familias solo con permiso por escrito.</li>
+      <li>Nada de cerebros rosados, rompecabezas ni colores que no sean de la marca.</li>
+    </ul>
+  </div>
+</section>
+<!-- ===== FIN 06 Imagen ===== -->
+
+<!-- ===== INICIO 07 Movimiento ===== -->
+<section class="cap on-dark" id="movimiento">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">07 · Movimiento</p>
+      <div><h2 class="h2" data-split>Se mueve como una idea que se conecta.</h2><p class="lead" data-reveal style="margin-top:14px">Despacio, sin rebotes ni sustos. Solo los puntos laten, como una sinapsis.</p></div>
+    </div>
+    <div class="mov-grid">
+      <ol class="pasos" data-reveal>
+        <li><div><strong>Las dos mitades se encuentran</strong><p>El hemisferio azul noche entra por la izquierda, el azul Insight por la derecha, y se unen al centro.</p></div></li>
+        <li><div><strong>Un pulso al conectarse</strong><p>Un anillo de luz sale del centro, como el punto hueco del logo.</p></div></li>
+        <li><div><strong>El mensaje aparece</strong><p>El titular sube renglón por renglón y la palabra INSIGHT se asienta detrás del cerebro.</p></div></li>
+        <li><div><strong>El circuito lleva al botón</strong><p>Una línea del logo se dibuja desde el cerebro y termina en un punto que enciende "Solicitar cita".</p></div></li>
+      </ol>
+      <div class="ritmo" data-reveal>
+        <div><strong>Al bajar por la página</strong><p>Títulos que suben desde una ranura y bloques que aparecen en cascada suave.</p></div>
+        <div><strong>Los trazos</strong><p>Las líneas de circuito se dibujan solas cuando llegas a ellas.</p></div>
+        <div><strong>El cierre</strong><p>Al final de la página el símbolo se dibuja otra vez, como una firma.</p></div>
+        <div><strong>Lo que no hará</strong><p>Rebotes, cursores raros, carruseles que atrapan el scroll ni efectos que distraigan de leer.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN 07 Movimiento ===== -->
+
+<!-- ===== INICIO 08 Piezas ===== -->
+<section class="cap" id="piezas">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">08 · Piezas</p>
+      <div><h2 class="h2" data-split>Un botón, una acción.</h2><p class="lead" data-reveal style="margin-top:14px">En toda la página el botón principal dice lo mismo y lleva a WhatsApp. Pasa el mouse encima o tócalo.</p></div>
+    </div>
+    <div class="piezas">
+      <div class="botones" data-reveal>
+        <p class="eyebrow">Botones</p>
+        <div class="botones__fila">
+          <a class="btn" href="https://wa.me/50671024989?text=Hola%20NeuroInsight%2C%20quisiera%20solicitar%20una%20cita." target="_blank" rel="noopener">Solicitar cita <span class="btn__node" aria-hidden="true"></span></a>
+          <a class="btn btn--ghost" href="#piezas">Ver servicios <span class="btn__node" aria-hidden="true"></span></a>
+        </div>
+        <a class="link-node" href="#piezas">Leer el artículo <svg viewBox="0 0 34 12" aria-hidden="true"><path d="M1 6h24"/><circle cx="29" cy="6" r="4"/></svg></a>
+        <p class="lead" style="font-size:.95rem">El punto del botón crece al pasar el mouse, como un nodo que se activa. El botón oscuro es para acciones secundarias.</p>
+      </div>
+      <div data-reveal>
+        <article class="servicio">
+          <svg class="circuito servicio__circuito" viewBox="0 0 120 60" aria-hidden="true"><path d="M4 50H48L76 22H112"/><circle class="c-anillo" cx="4" cy="50" r="4.5" style="stroke:var(--brand)"/><circle cx="112" cy="22" r="4.5"/></svg>
+          <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="11" cy="9" r="4"/><circle cx="22.5" cy="12" r="3"/><path d="M3.5 26c0-4.6 3.4-8 7.5-8s7.5 3.4 7.5 8"/><path d="M18 26c.4-3.4 2.3-6 4.5-6s4.1 2.6 4.5 6"/></svg></span>
+          <p class="eyebrow eyebrow--ring">Servicio</p>
+          <h3 class="h3">Salud familiar</h3>
+          <p>Evaluación, diagnóstico y acompañamiento para personas neurodivergentes y sus familias, con un enfoque empático y basado en evidencia.</p>
+          <ul class="servicio__lista"><li>TEA</li><li>TDAH</li><li>Aprendizaje</li><li>Funciones ejecutivas</li></ul>
+          <a class="link-node" href="https://wa.me/50671024989?text=Hola%20NeuroInsight%2C%20me%20interesa%20el%20servicio%20de%20Salud%20familiar." target="_blank" rel="noopener">Agendar por WhatsApp <svg viewBox="0 0 34 12" aria-hidden="true"><path d="M1 6h24"/><circle cx="29" cy="6" r="4"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN 08 Piezas ===== -->
+
+<!-- ===== INICIO 09 Voz ===== -->
+<section class="cap" id="voz">
+  <div class="wrap">
+    <div class="cap__head">
+      <p class="cap__num">09 · Voz</p>
+      <div><h2 class="h2" data-split>Hablamos claro, con calma y sin etiquetas.</h2><p class="lead" data-reveal style="margin-top:14px">Como en tus artículos: lenguaje neuroafirmativo, que describe diferencias sin hablar de "corregir" a nadie.</p></div>
+    </div>
+    <div class="voz">
+      <div class="voz__col voz__col--si" data-reveal>
+        <p class="eyebrow">Decimos</p>
+        <ul>
+          <li><strong>Persona neurodivergente</strong><span>Primero la persona, después la condición.</span></li>
+          <li><strong>Acompañar, comprender, orientar</strong><span>Verbos de cercanía, no de arreglo.</span></li>
+          <li><strong>Basado en evidencia</strong><span>Cada afirmación con respaldo.</span></li>
+          <li><strong>Usted, con calidez</strong><span>Lo natural en Costa Rica: respetuoso y cercano a la vez.</span></li>
+        </ul>
+      </div>
+      <div class="voz__col voz__col--no" data-reveal>
+        <p class="eyebrow eyebrow--ring">Evitamos</p>
+        <ul>
+          <li><strong>"Sufre de autismo"</strong><span>Habla de dolor donde hay una forma distinta de funcionar.</span></li>
+          <li><strong>"Normal" frente a "anormal"</strong><span>Mejor: neurotípico y neurodivergente.</span></li>
+          <li><strong>Promesas de cura</strong><span>Acompañamos procesos, no prometemos resultados.</span></li>
+          <li><strong>Tecnicismos sin explicar</strong><span>Si usamos ADOS-2 o WISC-V, decimos qué es.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="frase" data-reveal>"Comprender para acompañar."<small>La frase que resume la marca. Ya vive en tu sitio y ahora la usamos en el sello.</small></p>
+  </div>
+</section>
+<!-- ===== FIN 09 Voz ===== -->
+
+<!-- ===== INICIO Cierre ===== -->
+<footer class="cierre">
+  <div class="wrap">
+    <svg class="cierre__iso" viewBox="%%VB_SYM%%" aria-hidden="true" focusable="false" fill-rule="evenodd"><path class="firma-trazo" style="fill:#fff;stroke:#fff" d="%%NAVY_SYM%%"/><path class="firma-trazo" style="fill:#8EC0F0;stroke:#8EC0F0" d="%%BLUE_SYM%%"/></svg>
+    <h2 class="h2" data-split>Una marca que se siente como una mano en el hombro.</h2>
+    <p>Siguiente paso: con esta identidad aprobada, armamos la estructura de la nueva página y sus textos.</p>
+    <div class="cierre__pie"><span>NeuroInsight · San Rafael de Oreamuno, Cartago</span><span>info@neuroinsightcr.com</span><span>+506 7102 4989</span></div>
+  </div>
+</footer>
+<!-- ===== FIN Cierre ===== -->
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="js/manual.js?v=20261026b" defer></script>
+</body>
+</html>

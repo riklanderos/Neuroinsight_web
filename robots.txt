@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /materiales/
+Disallow: /fuente/
+
+Sitemap: https://neuroinsightcr.com/sitemap.xml

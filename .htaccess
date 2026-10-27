@@ -1,0 +1,7 @@
+# Redirecciones de los artículos del sitio anterior (Hostinger / Apache)
+RewriteEngine On
+RewriteRule ^neurodivergencia-en-el-trabajo-cuando-la-barrera-no-es-el-talento-sino-el-entorno/?$ /blog/neurodivergencia-en-el-trabajo/ [R=301,L]
+RewriteRule ^ajustes-razonables-de-bajo-costo-y-alto-impacto-en-equipos-neurodiversos/?$ /blog/ajustes-razonables-en-el-trabajo/ [R=301,L]
+RewriteRule ^escuelas-neuroincluyentes-estrategias-practicas-para-apoyar-a-estudiantes-neurodivergentes/?$ /blog/escuelas-neuroincluyentes/ [R=301,L]
+RewriteRule ^senales-tempranas-de-tea-y-tdah-que-observar-y-cuando-buscar-apoyo/?$ /blog/senales-tempranas-tea-tdah/ [R=301,L]
+RewriteRule ^camuflaje-agotamiento-y-burnout-autista-cuando-verse-bien-tambien-cansa/?$ /blog/burnout-autista-y-camuflaje/ [R=301,L]

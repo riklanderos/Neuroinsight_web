@@ -1,0 +1,60 @@
+/* ==========================================================
+   NeuroInsight · Tokens de marca
+   Fuente única de colores, letras, formas y movimiento.
+   La usan el manual de marca y el sitio.
+   ========================================================== */
+
+@font-face{font-family:"Montserrat";src:url(../fonts/montserrat.woff2) format("woff2");font-weight:500 700;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(../fonts/dm-sans.woff2) format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(../fonts/instrument-serif.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(../fonts/instrument-serif-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+:root{
+  /* Color: los dos hemisferios del logo */
+  --ink:#021E4B;            /* Azul noche: hemisferio de la ciencia. Texto, títulos, secciones profundas */
+  --brand:#1D78C9;          /* Azul Insight: hemisferio humano. Botones, nodos, trazos */
+  --brand-press:#1765AB;    /* Azul Insight presionado (hover del botón) */
+  --brand-text:#1A6CB5;     /* Azul Insight para texto pequeño sobre fondo claro */
+  --brand-soft:#DCE9F7;     /* Azul claro: fondos de íconos, etiquetas, letras gigantes */
+  --brand-on-dark:#8EC0F0;  /* Azul cielo: texto y detalles sobre azul noche */
+  --cta:#1D78C9;
+  --cta-ink:#FFFFFF;
+  --bg:#EEF2F7;             /* Niebla: fondo general */
+  --surface:#FFFFFF;
+  --line:#D3DCE8;
+  --muted:#4A5B78;          /* Pizarra: textos de apoyo */
+  --on-dark-muted:#B9C6DA;
+  --error:#C62839;
+
+  /* Letras */
+  --font-display:"Montserrat",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,sans-serif;
+  --font-accent:"Instrument Serif",Georgia,serif;
+  --track-wide:.32em;       /* el espaciado de INSIGHT */
+
+  --fs-hero:clamp(2.05rem,1rem + 2.6vw,3.75rem);
+  --fs-h2:clamp(1.7rem,1.15rem + 2.2vw,3.1rem);
+  --fs-h3:clamp(1.18rem,1.05rem + .5vw,1.5rem);
+  --fs-lead:clamp(1.04rem,.98rem + .3vw,1.22rem);
+  --fs-body:1rem;
+  --fs-eyebrow:.74rem;
+
+  /* Forma: derivada de los lóbulos y los nodos del logo */
+  --r-xl:36px; --r-lg:26px; --r-md:16px; --r-sm:10px; --r-pill:999px;
+  --stroke:2.5px;           /* grosor del trazo de circuito */
+  --node:9px;               /* diámetro del nodo */
+  --shadow:0 30px 60px -28px rgba(2,30,75,.32);
+
+  /* Movimiento: cálido, preciso y sereno */
+  --ease:cubic-bezier(.25,1,.5,1);     /* pareja de power3.out */
+  --ease-io:cubic-bezier(.76,0,.24,1); /* pareja de power3.inOut */
+  --ease-pop:cubic-bezier(.34,1.4,.64,1);
+  --dur:1s;
+  --dist:26px;
+  --t-hover:.45s;
+
+  /* Espacio y ritmo */
+  --gutter:clamp(16px,4.5vw,56px);
+  --maxw:1240px;
+  --section-y:clamp(72px,10vw,150px);
+}

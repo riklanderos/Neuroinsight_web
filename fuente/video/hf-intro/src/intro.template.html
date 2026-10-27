@@ -1,0 +1,186 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "NI Serif";
+      src: url("assets/fonts/instrument-serif-italic.woff2") format("woff2");
+      font-style: italic;
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "NI Montserrat";
+      src: url("assets/fonts/montserrat.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 500 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #021e4b;
+    }
+    #intro-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 620px 620px at 540px 640px, rgba(29, 120, 201, 0.34), rgba(29, 120, 201, 0.12) 55%, rgba(29, 120, 201, 0) 100%),
+        radial-gradient(ellipse 900px 520px at 540px 1900px, rgba(29, 120, 201, 0.16), rgba(29, 120, 201, 0) 100%);
+    }
+    #intro-circuits {
+      position: absolute;
+      inset: 0;
+    }
+    #intro-brain {
+      position: absolute;
+      left: 260px;
+      top: 410px;
+      width: 560px;
+      height: 475px;
+    }
+    #intro-brain svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    #intro-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1035px;
+      text-align: center;
+      font-family: "NI Serif", serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 136px;
+      line-height: 1.04;
+      color: #ffffff;
+    }
+    #intro-title .w {
+      display: inline-block;
+    }
+    #intro-divider {
+      position: absolute;
+      left: 505px;
+      top: 1376px;
+      width: 70px;
+      height: 3px;
+      border-radius: 2px;
+      background: #8ec0f0;
+    }
+    #intro-location {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1410px;
+      text-align: center;
+      font-family: "NI Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 29px;
+      letter-spacing: 0.24em;
+      color: #8ec0f0;
+      white-space: nowrap;
+    }
+    #intro-logo {
+      position: absolute;
+      left: 290px;
+      top: 1668px;
+      width: 500px;
+      height: auto;
+    }
+  </style>
+
+  <div id="root" data-composition-id="intro" data-width="1080" data-height="1920">
+    <!-- soft cobalt glow -->
+    <div id="intro-glow"></div>
+
+    <!-- circuit traces extending from the brain (45° elbows, round nodes) -->
+    <div id="intro-circuits" data-layout-ignore>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" fill="none">
+        <defs>
+          <filter id="intro-halo" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="9" /></filter>
+        </defs>
+        __TRACES__
+      </svg>
+    </div>
+
+    <!-- brain symbol (iso-color.svg, recoloured for the dark ground) -->
+    <div id="intro-brain">
+      <svg viewBox="30 43 499 423" fill-rule="evenodd">
+        <path id="intro-brain-left" fill="#FFFFFF" fill-opacity="0" d="__LEFT_D__" />
+        <path id="intro-brain-right" fill="#8EC0F0" fill-opacity="0" d="__RIGHT_D__" />
+        <g id="intro-outline-left" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">__LEFT_OL__</g>
+        <g id="intro-outline-right" fill="none" stroke="#8EC0F0" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">__RIGHT_OL__</g>
+      </svg>
+    </div>
+
+    <!-- tagline -->
+    <div id="intro-title"><span class="w" id="intro-w1">Comprender</span><br /><span class="w" id="intro-w2">para</span> <span class="w" id="intro-w3">acompañar.</span></div>
+    <div id="intro-divider"></div>
+    <div id="intro-location">NeuroInsight · Cartago, Costa Rica</div>
+
+    <!-- sign-off logo -->
+    <img id="intro-logo" src="assets/logo-blanco.svg" alt="NeuroInsight" />
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // dash set-up in real path units (pathLength scaling is not reliable under frame capture)
+    const len = (el) => parseFloat(el.getAttribute("data-len"));
+    document.querySelectorAll("#intro-brain .ol, #intro-circuits .tr-line, #intro-circuits .tr-pulse").forEach((p) => {
+      const L = p.getTotalLength();
+      p.setAttribute("data-len", L);
+      p.removeAttribute("pathLength");
+      if (p.classList.contains("tr-pulse")) {
+        p.setAttribute("stroke-dasharray", 0.14 * L + " " + (3 * L + 10));
+        p.setAttribute("stroke-dashoffset", 0.14 * L);
+      } else {
+        p.setAttribute("stroke-dasharray", L + " " + (1.2 * L + 10));
+        p.setAttribute("stroke-dashoffset", 1.1 * L + 5);
+      }
+    });
+
+    // ground
+    tl.fromTo("#intro-glow", { opacity: 0 }, { opacity: 1, duration: 1.8, ease: "power2.inOut" }, 0);
+
+    // brain: outline draws, then fills, outline fades
+    tl.fromTo("#intro-brain", { scale: 0.965, opacity: 0 }, { scale: 1, opacity: 1, duration: 2.6, ease: "power3.out" }, 0);
+    tl.fromTo("#intro-outline-left .ol", { attr: { "stroke-dashoffset": (i, el) => 1.1 * len(el) + 5 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.7, ease: "power1.inOut" }, 0.02);
+    tl.fromTo("#intro-outline-right .ol", { attr: { "stroke-dashoffset": (i, el) => 1.1 * len(el) + 5 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.7, ease: "power1.inOut" }, 0.14);
+    tl.fromTo("#intro-brain-left", { fillOpacity: 0 }, { fillOpacity: 1, duration: 0.8, ease: "power2.inOut", }, 1.65);
+    tl.fromTo("#intro-brain-right", { fillOpacity: 0 }, { fillOpacity: 1, duration: 0.8, ease: "power2.inOut", }, 1.75);
+    tl.fromTo("#intro-outline-left", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 2.5);
+    tl.fromTo("#intro-outline-right", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 2.6);
+
+    // circuit traces grow out of the brain, end nodes pop, then one light pulse runs along each
+    const traces = Array.from(document.querySelectorAll("#intro-circuits .trace"));
+    traces.forEach((g, i) => {
+      const t0 = 1.95 + i * 0.09;
+      const line = g.querySelector(".tr-line");
+      const start = g.querySelector(".tr-start");
+      const end = g.querySelector(".tr-end");
+      const halo = g.querySelector(".halo");
+      const pulse = g.querySelector(".tr-pulse");
+      const origin = end.getAttribute("data-origin");
+      tl.fromTo(start, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, t0);
+      tl.fromTo(line, { attr: { "stroke-dashoffset": 1.1 * len(line) + 5 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.95, ease: "power3.inOut" }, t0);
+      tl.fromTo(end, { scale: 0, opacity: 0, svgOrigin: origin }, { scale: 1, opacity: 1, svgOrigin: origin, duration: 0.42, ease: "back.out(2.2)" }, t0 + 0.82);
+      const p0 = 3.05 + i * 0.13;
+      tl.fromTo(pulse, { attr: { "stroke-dashoffset": 0.14 * len(pulse) } }, { attr: { "stroke-dashoffset": -1.02 * len(pulse) }, duration: 1.15, ease: "power2.inOut" }, p0);
+      tl.fromTo(pulse, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none", immediateRender: false }, p0);
+      tl.fromTo(pulse, { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in", immediateRender: false }, p0 + 0.95);
+      tl.fromTo(halo, { opacity: 0 }, { opacity: 0.85, duration: 0.25, ease: "power2.out" }, p0 + 1.0);
+      tl.fromTo(halo, { opacity: 0.85 }, { opacity: 0, duration: 0.7, ease: "power2.inOut", immediateRender: false }, p0 + 1.25);
+    });
+
+    // tagline: calm per-word blur-in
+    tl.fromTo(["#intro-w1", "#intro-w2", "#intro-w3"], { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.95, ease: "power3.out", stagger: 0.2 }, 2.95);
+    tl.fromTo("#intro-divider", { scaleX: 0, opacity: 0.8 }, { scaleX: 1, opacity: 0.8, duration: 0.7, ease: "power3.inOut" }, 3.95);
+    tl.fromTo("#intro-location", { opacity: 0, filter: "blur(5px)" }, { opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "power3.out" }, 4.1);
+
+    // sign-off logo, then a still hold to the end (5.85 s -> 7.0 s)
+    tl.fromTo("#intro-logo", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.85, ease: "power3.out" }, 5.0);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["intro"] = tl;
+  </script>
+</template>

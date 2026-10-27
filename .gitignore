@@ -1,0 +1,13 @@
+# Sistema y herramientas locales
+.DS_Store
+.claude/
+node_modules/
+
+# Referencias de Pinterest: son de terceros, no se publican
+materiales/referencias/
+
+# Imágenes originales en alta (pesan mucho; el sitio usa las versiones de img/)
+# Se guardan solo los recortes, que necesita fuente/blog/portadas.mjs
+materiales/generadas/**/*.png
+!materiales/generadas/**/*-recorte.png
+!materiales/generadas/**/recorte-*.png
