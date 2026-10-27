@@ -165,6 +165,8 @@ Tres de empresas y escuelas, dos de familias: la misma proporción 60/40 del sit
 **Cómo editar:**
 - Los textos están en `fuente/blog/articulos.mjs`. Después de cambiarlos: `node fuente/build-blog.mjs <versión> && node fuente/build-index.mjs <versión>` (la versión nueva obliga a los navegadores a cargar el CSS y JS actualizados).
 - Para rehacer las portadas: `SHARP_PATH=<ruta a sharp> node fuente/blog/portadas.mjs [slug]` (necesita Google Chrome).
+- **Artículos nuevos desde el Estudio editorial:** viven en `fuente/blog/articulos-estudio.json` (no se editan a mano). El Estudio agrega o actualiza el artículo ahí, corre `build-blog.mjs` y `build-index.mjs` con la misma versión y abre un PR con las páginas generadas. `articulos.mjs` los pone primero, del más reciente al más antiguo.
+- Un artículo sin portada propia usa la genérica (`img/blog/generica-*`, campo `imagen: "generica"`). Para rehacerla: `SHARP_PATH=<ruta a sharp> node fuente/blog/portada-generica.mjs`. Para darle portada propia, se agrega su diseño en `portadas.mjs`, se generan sus imágenes y se quita el campo `imagen`.
 - Animaciones del blog en `js/blog.js`; estilos en `css/blog.css`.
 
 **SEO técnico agregado:** `sitemap.xml`, `robots.txt` y redirecciones 301 de las direcciones viejas de estos 5 artículos a las nuevas (`_redirects` para Netlify y `.htaccess` para Hostinger), para no perder lo que ya tenían en Google.
