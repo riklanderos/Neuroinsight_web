@@ -325,8 +325,8 @@ html.lenis,html.lenis body{height:auto}
 .retrato__inicial span:first-child{left:-4cqw;top:-10cqw}
 .retrato__inicial span:last-child{right:-6cqw;top:12cqw}
 .retrato__brillo{position:absolute;z-index:1;left:50%;bottom:-10%;width:110%;aspect-ratio:1;translate:-50% 0;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(142,192,240,var(--brillo,.4)) 0%,rgba(29,120,201,calc(var(--brillo,.4) * .5)) 32%,transparent 62%);pointer-events:none}
-.retrato__persona{position:absolute;z-index:2;bottom:0;left:50%;translate:-50% 0;height:var(--alto,80%);width:auto;max-width:none;object-fit:contain;object-position:50% 100%;filter:drop-shadow(0 18px 30px rgba(2,10,30,.45));transition:transform 1s var(--ease)}
-.retrato::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(2,30,75,.96) 0%,rgba(2,30,75,.82) 26%,rgba(2,30,75,.35) 44%,rgba(2,30,75,0) 58%);pointer-events:none}
+.retrato__persona{position:absolute;z-index:2;bottom:0;left:50%;translate:-50% 0;height:var(--alto,80%);width:auto;max-width:none;object-fit:contain;object-position:50% 100%;bottom:var(--sube,9%);-webkit-mask-image:linear-gradient(to top,transparent 0%,#000 16%);mask-image:linear-gradient(to top,transparent 0%,#000 16%);filter:drop-shadow(0 18px 30px rgba(2,10,30,.45));transition:transform 1s var(--ease)}
+.retrato::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(2,30,75,.96) 0%,rgba(2,30,75,.8) 20%,rgba(2,30,75,.3) 34%,rgba(2,30,75,0) 46%);pointer-events:none}
 .retrato__esq{position:absolute;z-index:4;top:7cqw;display:grid;font:500 max(9px,3.1cqw)/1.3 var(--font-display);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82)}
 .retrato__esq b{font-weight:700;color:#fff}
 .retrato__esq--izq{left:7cqw}
@@ -335,7 +335,7 @@ html.lenis,html.lenis body{height:auto}
 .retrato__pie{position:absolute;z-index:4;left:6cqw;right:6cqw;bottom:7cqw;display:grid;justify-items:center;text-align:center}
 .retrato__rol{font:500 max(9px,3.2cqw)/1.3 var(--font-display);letter-spacing:.2em;text-transform:uppercase;color:#DCE9F7}
 .retrato__rol b{font-weight:700;color:#fff}
-.retrato__nombre{margin:1.6cqw 0 3.4cqw;font:italic 400 15.5cqw/.9 var(--font-accent);letter-spacing:-.01em;background:linear-gradient(180deg,#FFFFFF 30%,#BFDAF4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em .06em}
+.retrato__nombre{margin:1.2cqw 0 3cqw;font:italic 400 12cqw/.95 var(--font-accent);white-space:nowrap;letter-spacing:-.01em;background:linear-gradient(180deg,#FFFFFF 30%,#BFDAF4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em .06em}
 .retrato__tag{display:inline-block;padding:1.8cqw 3.4cqw;border-radius:6px;background:var(--brand);font:500 max(11px,3.5cqw)/1.25 var(--font-body);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.18) inset}
 @media (hover:hover) and (pointer:fine){
   .retrato:hover .retrato__fondo{scale:1.06}
