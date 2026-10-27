@@ -2,8 +2,12 @@
 // y se reescribió con estructura SEO: palabra clave, respuesta directa, índice, preguntas y llamado a la acción.
 // El cuerpo es HTML; cada <h2> necesita un id para el índice.
 // audiencia: "org" lleva al formulario de propuesta; "fam" lleva a WhatsApp.
+// Los artículos que publica el Estudio editorial viven en articulos-estudio.json (no se editan a mano aquí);
+// van primero, del más reciente al más antiguo. Si un slug existe en los dos, gana el del Estudio.
+// imagen: prefijo de las portadas en img/blog/ (por defecto el slug; "generica" si el artículo aún no tiene portada propia).
+import fs from 'node:fs';
 
-export const ARTICULOS = [
+const MANUALES = [
 {
   slug: 'neurodivergencia-en-el-trabajo',
   original: 'neurodivergencia-en-el-trabajo-cuando-la-barrera-no-es-el-talento-sino-el-entorno',
@@ -352,3 +356,7 @@ export const ARTICULOS = [
   ]
 }
 ];
+
+const ESTUDIO = JSON.parse(fs.readFileSync(new URL('./articulos-estudio.json', import.meta.url), 'utf8'))
+  .sort((a, b) => b.publicado.localeCompare(a.publicado));
+export const ARTICULOS = [...ESTUDIO, ...MANUALES.filter((m) => !ESTUDIO.some((e) => e.slug === m.slug))];

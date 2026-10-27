@@ -7,7 +7,7 @@ const ARROW='<svg viewBox="0 0 34 12" aria-hidden="true"><path d="M1 6h24"/><cir
 // Tira del blog en Recursos: las cinco portadas, deslizables en el celular
 const BLOG_TIRA=`<div class="del-blog">
       <div class="del-blog__tira" data-lenis-prevent>
-        ${ARTICULOS.map(a=>`<a class="del-blog__item" href="blog/${a.slug}/" data-reveal><img src="img/blog/${a.slug}-portada-720.webp" width="720" height="900" alt="" loading="lazy" decoding="async"><span class="del-blog__cat">${a.categoria}</span><span class="del-blog__t">${a.h1}</span></a>`).join('\n        ')}
+        ${ARTICULOS.map(a=>`<a class="del-blog__item" href="blog/${a.slug}/" data-reveal><img src="img/blog/${a.imagen || a.slug}-portada-720.webp" width="720" height="900" alt="" loading="lazy" decoding="async"><span class="del-blog__cat">${a.categoria}</span><span class="del-blog__t">${a.h1}</span></a>`).join('\n        ')}
       </div>
       <a class="link-node" href="blog/">Ver todo el blog ${ARROW}</a>
     </div>`;

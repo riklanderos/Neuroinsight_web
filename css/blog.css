@@ -101,6 +101,15 @@
 .prosa ol[start="4"]{counter-reset:paso 3}.prosa ol[start="7"]{counter-reset:paso 6}.prosa ol[start="9"]{counter-reset:paso 8}
 .prosa ol > li{counter-increment:paso;padding-left:2.4em}
 .prosa ol > li::before{content:counter(paso);position:absolute;left:0;top:.18em;width:1.65em;height:1.65em;border-radius:50%;box-shadow:inset 0 0 0 2px var(--brand);display:grid;place-items:center;font:600 .78em/1 var(--font-display);color:var(--brand-text)}
+/* Tablas y citas (artículos del Estudio editorial) */
+.prosa table{width:100%;border-collapse:collapse;font-size:.92em;line-height:1.5;display:block;overflow-x:auto;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--line);background:var(--surface)}
+.prosa th,.prosa td{padding:12px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);color:#1F3354}
+.prosa th{font:600 .78em/1.3 var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--brand-text);background:var(--brand-soft)}
+.prosa tr:last-child td{border-bottom:0}
+@media (min-width:700px){.prosa table{display:table}}
+.prosa blockquote{border-left:3px solid var(--brand);padding:6px 0 6px 20px;font:italic 400 1.22em/1.45 var(--font-accent);color:var(--ink)}
+.prosa blockquote p{color:inherit}
+.prosa blockquote strong{background:none;font-weight:inherit;color:var(--brand-text)}
 .prosa .nota{font-size:.9rem;color:var(--muted);padding:14px 18px;border-radius:var(--r-sm);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
 
 .resumen{margin-top:0;padding:clamp(22px,3vw,30px);border-radius:var(--r-lg);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line),var(--shadow)}

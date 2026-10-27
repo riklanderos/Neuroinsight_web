@@ -91,8 +91,8 @@ const url = (a) => `${DOM}/blog/${a.slug}/`;
 // Tarjeta del índice y de "Siga leyendo"
 function tarjeta(a, R, nivel = 'h2', destacada = false) {
   const img = destacada
-    ? `<img src="${R}img/blog/${a.slug}-ancha.webp" width="1200" height="630" alt="" loading="lazy" decoding="async">`
-    : `<img src="${R}img/blog/${a.slug}-portada-720.webp" srcset="${R}img/blog/${a.slug}-portada-720.webp 720w, ${R}img/blog/${a.slug}-portada-1080.webp 1080w" sizes="(min-width:1100px) 280px, (min-width:560px) 45vw, 92vw" width="720" height="900" alt="" loading="lazy" decoding="async">`;
+    ? `<img src="${R}img/blog/${a.imagen || a.slug}-ancha.webp" width="1200" height="630" alt="" loading="lazy" decoding="async">`
+    : `<img src="${R}img/blog/${a.imagen || a.slug}-portada-720.webp" srcset="${R}img/blog/${a.imagen || a.slug}-portada-720.webp 720w, ${R}img/blog/${a.imagen || a.slug}-portada-1080.webp 1080w" sizes="(min-width:1100px) 280px, (min-width:560px) 45vw, 92vw" width="720" height="900" alt="" loading="lazy" decoding="async">`;
   return `<a class="tarjeta${destacada ? ' tarjeta--destacada' : ''}" href="${R}blog/${a.slug}/" data-cat="${a.categoria}" data-tarjeta>
   <figure class="tarjeta__img">${img}</figure>
   <div class="tarjeta__txt">
@@ -120,7 +120,7 @@ function tarjeta(a, R, nivel = 'h2', destacada = false) {
       <p class="lead" data-reveal>Guías claras sobre neurodivergencia para empresas, centros educativos y familias, escritas por nuestro equipo con base en evidencia.</p>
     </div>
     <div class="pila" aria-hidden="true">
-      ${ARTICULOS.slice(0, 3).map((a, i) => `<img class="pila__p pila__p--${i + 1}" src="${R}img/blog/${a.slug}-portada-720.webp" width="720" height="900" alt="" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('\n      ')}
+      ${ARTICULOS.slice(0, 3).map((a, i) => `<img class="pila__p pila__p--${i + 1}" src="${R}img/blog/${a.imagen || a.slug}-portada-720.webp" width="720" height="900" alt="" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('\n      ')}
     </div>
   </div>
 </section>
@@ -143,7 +143,7 @@ function tarjeta(a, R, nivel = 'h2', destacada = false) {
 `;
   const ld = [
     { '@context': 'https://schema.org', '@type': 'Blog', name: 'Blog NeuroInsight', url: DOM + '/blog/', inLanguage: 'es-CR', publisher: ORG,
-      blogPost: ARTICULOS.map(a => ({ '@type': 'BlogPosting', headline: a.h1, url: url(a), datePublished: a.publicado, image: `${DOM}/img/blog/${a.slug}-portada-1080.webp` })) },
+      blogPost: ARTICULOS.map(a => ({ '@type': 'BlogPosting', headline: a.h1, url: url(a), datePublished: a.publicado, image: `${DOM}/img/blog/${a.imagen || a.slug}-portada-1080.webp` })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Inicio', item: DOM + '/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: DOM + '/blog/' }] }
   ];
@@ -151,7 +151,7 @@ function tarjeta(a, R, nivel = 'h2', destacada = false) {
   fs.writeFileSync(new URL('../blog/index.html', import.meta.url), pagina({
     R, titulo: 'Blog sobre neurodivergencia y neuroinclusión | NeuroInsight',
     descripcion: 'Guías claras sobre neurodivergencia, neuroinclusión laboral, escuelas neuroincluyentes, TEA y TDAH, para empresas, centros educativos y familias en Costa Rica.',
-    canonica: DOM + '/blog/', imagen: `${DOM}/img/blog/${dest.slug}-og.jpg`, tipoOg: 'website', ld, cuerpo, blogActual: true
+    canonica: DOM + '/blog/', imagen: `${DOM}/img/blog/${dest.imagen || dest.slug}-og.jpg`, tipoOg: 'website', ld, cuerpo, blogActual: true
   }));
 }
 
@@ -187,7 +187,7 @@ for (const a of ARTICULOS) {
       <p class="art-meta" data-reveal><span>Equipo NeuroInsight</span><span><time datetime="${a.publicado}">${fecha(a.publicado)}</time></span><span>${minutos(a)} min de lectura</span></p>
     </div>
     <figure class="art-portada" data-portada>
-      <img src="${R}img/blog/${a.slug}-portada-1080.webp" srcset="${R}img/blog/${a.slug}-portada-720.webp 720w, ${R}img/blog/${a.slug}-portada-1080.webp 1080w" sizes="(min-width:960px) 420px, 86vw" width="1080" height="1350" alt="Portada del artículo: ${esc(sinHtml(a.portada.titulo))}" fetchpriority="high">
+      <img src="${R}img/blog/${a.imagen || a.slug}-portada-1080.webp" srcset="${R}img/blog/${a.imagen || a.slug}-portada-720.webp 720w, ${R}img/blog/${a.imagen || a.slug}-portada-1080.webp 1080w" sizes="(min-width:960px) 420px, 86vw" width="1080" height="1350" alt="Portada del artículo: ${esc(sinHtml(a.portada.titulo))}" fetchpriority="high">
       <svg class="art-portada__trazo" viewBox="0 0 400 500" aria-hidden="true"><path data-draw d="M392 120 C 430 300, 300 520, 120 492 S -40 300, 20 140 S 250 -40, 360 60"/><circle cx="360" cy="60" r="9"/></svg>
     </figure>
   </div>
@@ -248,7 +248,7 @@ for (const a of ARTICULOS) {
 `;
   const ld = [
     { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: a.h1, description: a.descripcion, inLanguage: 'es-CR',
-      image: [`${DOM}/img/blog/${a.slug}-portada-1080.webp`, `${DOM}/img/blog/${a.slug}-og.jpg`],
+      image: [`${DOM}/img/blog/${a.imagen || a.slug}-portada-1080.webp`, `${DOM}/img/blog/${a.imagen || a.slug}-og.jpg`],
       datePublished: a.publicado, dateModified: MODIFICADO, author: { '@type': 'Organization', name: 'Equipo NeuroInsight', url: DOM + '/' }, publisher: ORG,
       mainEntityOfPage: url(a), keywords: a.palabraClave, articleSection: a.categoria },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -259,7 +259,7 @@ for (const a of ARTICULOS) {
   fs.mkdirSync(new URL(`../blog/${a.slug}/`, import.meta.url), { recursive: true });
   fs.writeFileSync(new URL(`../blog/${a.slug}/index.html`, import.meta.url), pagina({
     R, titulo: `${a.tituloSeo} | NeuroInsight`, descripcion: a.descripcion, canonica: url(a),
-    imagen: `${DOM}/img/blog/${a.slug}-og.jpg`, tipoOg: 'article', ld, cuerpo: html, blogActual: true,
+    imagen: `${DOM}/img/blog/${a.imagen || a.slug}-og.jpg`, tipoOg: 'article', ld, cuerpo: html, blogActual: true,
     // En los artículos para familias la barra del celular lleva directo a WhatsApp
     barra: org ? null : `<div class="mobile-cta" aria-hidden="true"><a class="btn" href="${waArt}" target="_blank" rel="noopener" tabindex="-1">Solicitar cita por WhatsApp <span class="btn__node" aria-hidden="true"></span></a></div>`
   }));
@@ -270,9 +270,10 @@ for (const a of ARTICULOS) {
 const urls = [[DOM + '/', MODIFICADO], [DOM + '/blog/', MODIFICADO], ...ARTICULOS.map(a => [url(a), MODIFICADO])];
 fs.writeFileSync(new URL('../sitemap.xml', import.meta.url), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `  <url><loc>${u}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /materiales/\nDisallow: /fuente/\n\nSitemap: ${DOM}/sitemap.xml\n`);
-fs.writeFileSync(new URL('../_redirects', import.meta.url), ARTICULOS.map(a => `/${a.original}  /blog/${a.slug}/  301`).join('\n') + '\n');
-fs.writeFileSync(new URL('../.htaccess', import.meta.url), '# Redirecciones de los artículos del sitio anterior (Hostinger / Apache)\nRewriteEngine On\n' + ARTICULOS.map(a => `RewriteRule ^${a.original}/?$ /blog/${a.slug}/ [R=301,L]`).join('\n') + '\n');
+const VIEJOS = ARTICULOS.filter((a) => a.original);
+fs.writeFileSync(new URL('../_redirects', import.meta.url), VIEJOS.map(a => `/${a.original}  /blog/${a.slug}/  301`).join('\n') + '\n');
+fs.writeFileSync(new URL('../.htaccess', import.meta.url), '# Redirecciones de los artículos del sitio anterior (Hostinger / Apache)\nRewriteEngine On\n' + VIEJOS.map(a => `RewriteRule ^${a.original}/?$ /blog/${a.slug}/ [R=301,L]`).join('\n') + '\n');
 fs.writeFileSync(new URL('../vercel.json', import.meta.url), JSON.stringify({
-  redirects: ARTICULOS.flatMap(a => ['', '/'].map(fin => ({ source: `/${a.original}${fin}`, destination: `/blog/${a.slug}/`, statusCode: 301 })))
+  redirects: VIEJOS.flatMap(a => ['', '/'].map(fin => ({ source: `/${a.original}${fin}`, destination: `/blog/${a.slug}/`, statusCode: 301 })))
 }, null, 2) + '\n');
 console.log('blog ok');
