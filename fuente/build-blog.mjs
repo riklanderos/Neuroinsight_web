@@ -3,6 +3,7 @@
 // Uso: node fuente/build-blog.mjs <version>
 import fs from 'node:fs';
 import { ARTICULOS } from './blog/articulos.mjs';
+import { PUBLICO } from './sitio.mjs';
 
 const V = process.argv[2] || '20261026f';
 const DOM = 'https://neuroinsightcr.com';
@@ -50,10 +51,11 @@ function pagina({ R, titulo, descripcion, canonica, imagen, tipoOg, ld, cuerpo, 
 <meta property="og:site_name" content="NeuroInsight">
 <meta property="og:title" content="${esc(titulo)}">
 <meta property="og:description" content="${esc(descripcion)}">
-<meta property="og:image" content="${imagen}">
+<meta property="og:image" content="${imagen.replace(DOM, PUBLICO)}?v=${V}">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="${canonica}">
+<meta property="og:url" content="${canonica.replace(DOM, PUBLICO)}">
 <meta property="og:locale" content="es_CR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="${R}favicon.ico" sizes="any">

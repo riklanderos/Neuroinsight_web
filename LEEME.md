@@ -14,7 +14,7 @@ Con la vista previa del proyecto (`.claude/launch.json` levanta un servidor en e
 | `css/tokens.css` | Colores, letras, formas y movimiento. Lo comparten la página y el manual |
 | `css/site.css`, `js/main.js` | Estilos y comportamiento de la página. Cada sección tiene su bloque |
 | `manual-de-marca.html`, `css/manual.css`, `js/manual.js` | Manual de marca |
-| `img/` | Logo en vector, favicon, cerebros, retratos del equipo (`img/equipo/`), actividades, testimonios, imagen para compartir (`og-imagen.jpg`) |
+| `img/` | Logo en vector, favicon, cerebros, retratos del equipo (`img/equipo/`), actividades, testimonios, imágenes para compartir (`og-imagen.jpg`, `og-manual.jpg`) |
 | `video/` | Video de fondo de la sección de organizaciones y video para redes |
 | `fonts/`, `vendor/` | Tipografías y librerías (GSAP 3.13.0 con ScrollTrigger y SplitText; Lenis 1.3.11) |
 | `estructura.md` | La estructura aprobada en la etapa 3 (antes del cambio a 60/40) |
@@ -187,3 +187,15 @@ Tres de empresas y escuelas, dos de familias: la misma proporción 60/40 del sit
 - Cada cambio que se sube a `main` se publica solo, en unos segundos.
 - `vercel.json` (lo genera `fuente/build-blog.mjs`) lleva las redirecciones 301 de los artículos viejos. `.vercelignore` evita que se publiquen `materiales/`, `fuente/` y este LEEME.
 - Pendiente: conectar el dominio `neuroinsightcr.com` en Vercel (Settings → Domains) y cambiar los DNS donde está registrado. Mientras tanto, las etiquetas canónicas apuntan al dominio final.
+
+## Vista previa al compartir
+
+Es lo que aparece al pegar el enlace en WhatsApp, Facebook, LinkedIn o X (etiquetas Open Graph: los datos que leen las redes para armar la tarjeta).
+
+- **Página principal:** `img/og-imagen.jpg` (1200 x 630). Collage sobre azul noche con Adriana (lo humano) y el cerebro de dos tonos (la ciencia), papel rasgado, trazo de circuito con nodos, el lema "Comprender para acompañar", la etiqueta "Empresas, escuelas y familias" y los tres servicios.
+- **Manual de marca:** `img/og-manual.jpg`, la misma composición con "Manual de marca" y sus apartados.
+- **Blog:** cada artículo usa su `<slug>-og.jpg`.
+- Para rehacer las dos primeras: `SHARP_PATH=<ruta a sharp> node fuente/compartir.mjs` (necesita Google Chrome). Los textos están en la lista `PIEZAS` del mismo archivo.
+- Título y descripción para compartir: en el `<head>` de `fuente/index.tpl.html` y `fuente/manual.tpl.html`; los del blog salen de cada artículo.
+- **Dominio de las vistas previas:** `fuente/sitio.mjs` (`PUBLICO`). Hoy apunta a `neuroinsightcr.riklanderos.tech`, porque en `neuroinsightcr.com` sigue el sitio anterior y las redes no encontrarían la imagen. Al conectar el dominio final se cambia esa línea y se vuelven a armar index, blog y manual.
+- Las redes guardan la vista previa varios días. Si al compartir sale la anterior, se actualiza en el depurador de Facebook (developers.facebook.com/tools/debug, botón "Volver a extraer") y en el Post Inspector de LinkedIn. Cada armado nuevo cambia el `?v=` de la imagen, y eso también ayuda.

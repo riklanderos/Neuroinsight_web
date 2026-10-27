@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { ARTICULOS } from './blog/articulos.mjs';
+import { PUBLICO } from './sitio.mjs';
 const s=JSON.parse(fs.readFileSync(new URL('logo-split.json', import.meta.url))), m=JSON.parse(fs.readFileSync(new URL('logo-meta.json', import.meta.url)));
 const V=process.argv[2]||'20261026c';
 let h=fs.readFileSync(new URL('index.tpl.html', import.meta.url),'utf8');
@@ -12,7 +13,7 @@ const BLOG_TIRA=`<div class="del-blog">
       <a class="link-node" href="blog/">Ver todo el blog ${ARROW}</a>
     </div>`;
 h=h.replace(/%%WA:([^%]+)%%/g,(_,msg)=>'https://wa.me/50671024989?text='+encodeURIComponent(msg));
-const map={VB_ALL:m.all,VB_SYM:m.sym,NAVY_SYM:s.navySym,BLUE_SYM:s.blueSym,NAVY_WORD:s.navyWord,BLUE_WORD:s.blueWord,ARROW,V,BLOG_TIRA};
+const map={VB_ALL:m.all,VB_SYM:m.sym,NAVY_SYM:s.navySym,BLUE_SYM:s.blueSym,NAVY_WORD:s.navyWord,BLUE_WORD:s.blueWord,ARROW,V,BLOG_TIRA,PUBLICO};
 h=h.replace(/%%(\w+)%%/g,(_,k)=>{if(!(k in map))throw new Error('falta '+k);return map[k]});
 fs.writeFileSync(new URL('../index.html', import.meta.url),h);
 console.log('index ok',Math.round(h.length/1024)+'KB', (h.match(/wa\.me/g)||[]).length,'enlaces WA');
