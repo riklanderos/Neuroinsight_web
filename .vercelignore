@@ -5,3 +5,5 @@ LEEME.md
 estructura.md
 .htaccess
 _redirects
+.env*
+.vercel

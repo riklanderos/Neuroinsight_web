@@ -11,3 +11,5 @@ materiales/referencias/
 materiales/generadas/**/*.png
 !materiales/generadas/**/*-recorte.png
 !materiales/generadas/**/recorte-*.png
+.vercel
+.env*
